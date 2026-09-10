@@ -19,8 +19,7 @@ public class Program {
 		List<TaxPayer> taxPayerList = new ArrayList<>();
 		sc.nextLine();
 		for (int i = 0; i < numOfTaxPayers; i++) {
-			System.out.printf("\nDigite os dados do %do contribuinte: ", i+1);
-			taxPayerList.add(createTaxPayer(sc));
+			taxPayerList.add(createTaxPayer(sc, i+1));
 		}
 
 		for (int i = 0; i < taxPayerList.size(); i++) {
@@ -30,7 +29,8 @@ public class Program {
 		sc.close();
 	}
 
-	public static TaxPayer createTaxPayer(Scanner sc) {
+	public static TaxPayer createTaxPayer(Scanner sc, int position) {
+		System.out.printf("\nDigite os dados do %do contribuinte: ", position);
 		System.out.print("\nRenda anual com salário: ");
 		double salaryIncome = sc.nextDouble();
 
